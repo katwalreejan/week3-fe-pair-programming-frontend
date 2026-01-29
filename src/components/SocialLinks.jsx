@@ -1,6 +1,14 @@
-function SocialLinks() {
-  return <div>SocialLinks</div>;
-}
+import { socialLinks } from '../data'
+import SocialLink from './SocialLink'
 
-export default SocialLinks;
+const PageLinks = ({ parentClass, itemClass }) => {
  
+  return (
+    <ul className={parentClass} id='nav-links'>
+      {socialLinks.map((link) => {
+        return <SocialLink key={link.id} link={link} itemClass={itemClass} />
+      })}
+    </ul>
+  )
+}
+export default PageLinks
